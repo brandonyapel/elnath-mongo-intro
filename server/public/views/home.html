@@ -1,0 +1,72 @@
+<h1>Home Page</h1>
+<label for="gameEntry">Game Entry Form:</label>
+<table>
+    <tr>
+        <th>
+            Name:
+        </th>
+        <td>
+            <input type="text" ng-model="vm.newGame.name" placeholder="Name">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Duration:
+        </th>
+        <td>
+            <input type="text" ng-model="vm.newGame.duration" placeholder="Duration">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Number of Players:
+        </th>
+        <td>
+            <input type="text" ng-model="vm.newGame.numberOfPlayers" placeholder="Number of Players">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Published Date:
+        </th>
+        <td>
+            <input type="text" ng-model="vm.newGame.publishedDate" placeholder="Published Date">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Votes:
+        </th>
+        <td>
+            0
+        </td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>
+            <button ng-click="vm.addGame(vm.newGame)">Submit Game</button>
+        </td>
+    </tr>
+</table>
+
+<label for="gameChest"></label>
+<table name="gameChest">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Number of Players</th>
+            <th>Published Date</th>
+            <th>Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="game in vm.games.list">
+            <td>{{game.name}}</td>
+            <td>{{game.duration}}</td>
+            <td>{{game.numberOfPlayers}}</td>
+            <td>{{game.publishedDate}}</td>
+            <td>{{game.votes}}</td>
+        </tr>
+    </tbody>
+</table>

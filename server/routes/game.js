@@ -17,5 +17,19 @@ router.get('/', function (req, res) {
     })
 });
 
+router.post('/', function (req, res) {
+    console.log('/games post')
+    var addGame = new Game (req.body);
+
+    addGame.save(function(errorMakingDatabaseQuery,data){
+        if (errorMakingDatabaseQuery) {
+            console.log('error', errorMakingDatabaseQuery);
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(201);
+        }
+    });
+});
+
 
 module.exports = router;
